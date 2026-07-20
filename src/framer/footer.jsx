@@ -847,10 +847,29 @@ var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
 														"var(--extracted-1of0zx5, var(--token-d0efb30f-1ca4-4318-a615-3c27c4e89f33, rgb(255, 31, 0)))",
 												}}
 											>
-												{"/Talk"}
+												{"Talk"}
 											</motion2.h2>
 										</React2.Fragment>
 									</RichText2>
+									<div style={{ flexBasis: "100%", width: "100%", marginTop: "16px" }}>
+									<a
+										href="/contact"
+										style={{
+											display: "inline-flex",
+											alignItems: "center",
+											gap: "6px",
+											width: "fit-content",
+											textDecoration: "none",
+											color: "#fff",
+											fontSize: "14px",
+											fontFamily: "Funnel Display, sans-serif",
+											border: "1px solid rgba(255,255,255,0.3)",
+											padding: "12px 24px",
+										}}
+									>
+										[ Contact Us ]
+									</a>
+									</div>
 								</motion2.div>
 								<motion2.div
 									suppressHydrationWarning={true}

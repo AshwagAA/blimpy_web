@@ -1,13 +1,12 @@
-import TeamCardTIckerFramerComponent from '../framer/team-card-t-icker.jsx'
 import CareerCardFramerComponent from '../framer/career-card.jsx'
-import { bg, h2, Counter } from '../lib/shared'
+import { bg, h2, Counter, TeamGrid } from '../lib/shared'
 
 export default function About() {
   return (
     <div style={bg}>
       <section style={{ padding: 'clamp(100px, 15vw, 160px) clamp(16px, 3vw, 30px) 80px', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '1296px' }}>
-          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Our <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic' }}>/ Story</em></h1>
+          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Our <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic' }}>Story</em></h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '80px' }}>Have a project in mind or just want to chat? Reach out — we're here to bring your digital vision to life with smart strategy and bold design.</p>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
             <img src="https://framerusercontent.com/images/4ivwcYUKgFi3Z8QSIx2ZL4aKLQ.png" alt="Blimpy team member reviewing a live data dashboard on a phone" style={{ flex: '1 1 300px', maxWidth: '44%', aspectRatio: '0.826', objectFit: 'cover', minWidth: '200px' }} />
@@ -34,16 +33,16 @@ export default function About() {
       <section style={{ padding: '0 0 115px' }}>
         <div style={{ padding: '0 clamp(16px, 3vw, 30px)', display: 'flex', justifyContent: 'center', marginBottom: '60px' }}>
           <div style={{ width: '100%', maxWidth: '1296px' }}>
-            <h2 style={h2}>All the <em>/ Geniuses</em></h2>
+            <h2 style={h2}>All the <em>Geniuses</em></h2>
           </div>
         </div>
-        <div style={{ width: '100%', overflow: 'hidden' }}>
-          <TeamCardTIckerFramerComponent.Responsive xBKqQSKfs={true} />
+        <div style={{ padding: '0 clamp(16px, 3vw, 30px)', display: 'flex', justifyContent: 'center' }}>
+          <TeamGrid />
         </div>
       </section>
       <section style={{ padding: 'clamp(80px, 15vw, 180px) clamp(16px, 3vw, 30px) clamp(40px, 8vw, 85px)', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexDirection: 'column', gap: '115px' }}>
-          <h2 style={h2}>Make a <em>/ Career</em></h2>
+          <h2 style={h2}>Make a <em>Career</em></h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <CareerCardFramerComponent.Responsive zFZoH0j0F="Marketing Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
             <CareerCardFramerComponent.Responsive zFZoH0j0F="Visual UI Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />

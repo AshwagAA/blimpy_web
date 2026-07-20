@@ -36,7 +36,7 @@ export default function Contact() {
         <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
             <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em' }}>
-              Let's <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', color: '#ff1f00' }}>/ Talk</em>
+              Let's <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', color: '#ff1f00' }}>Talk</em>
             </h1>
             <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.5)', maxWidth: '340px', lineHeight: '1.6', textAlign: 'right' }}>Have a project in mind? Reach out and let's build something great together.</p>
           </div>

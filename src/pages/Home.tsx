@@ -1,11 +1,10 @@
 import AboutButtonFramerComponent from '../framer/about-button.jsx'
 import ServiceCardWrapperFramerComponent from '../framer/service-card-wrapper.jsx'
-import TeamCardTIckerFramerComponent from '../framer/team-card-t-icker.jsx'
 import TestimonialSliderFramerComponent from '../framer/testimonial-slider.jsx'
 import BrandAreaFramerComponent from '../framer/brand-area.jsx'
 import FaqDropdownFramerComponent from '../framer/faq-dropdown.jsx'
 import { workItems } from '../data/work'
-import { bg, h2, TextReveal, ScrollHighlight, Counter, FadeInOnScroll, FunnelCanvas } from '../lib/shared'
+import { bg, h2, TextReveal, ScrollHighlight, Counter, FadeInOnScroll, FunnelCanvas, TeamGrid } from '../lib/shared'
 
 // ─── HERO ────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -22,7 +21,7 @@ function Hero() {
           </div>
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: '11px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '27px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: 'clamp(12px, 1.5vw, 14px)', color: 'rgba(255,255,255,0.5)', maxWidth: '190px', lineHeight: '1.4' }}>Blimpy bridges the gap between data science and creative strategy</span>
-            <TextReveal text="/ Data & Creative Studio." style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontSize: 'clamp(36px, 9vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }} />
+            <TextReveal text="Data & Creative Studio." style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontSize: 'clamp(36px, 9vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }} />
           </div>
         </div>
         <FunnelCanvas />
@@ -95,7 +94,7 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '10px' }}>
             <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0 }}>Explore</h2>
-              <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>/ Services</h2>
+              <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>Services</h2>
             </div>
             <a href="/service" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ Explore More ]</a>
           </div>
@@ -107,13 +106,13 @@ export default function Home() {
           <div style={{ maxWidth: '1296px', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '10px' }}>
             <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0 }}>Super</h2>
-              <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>/ Team</h2>
+              <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>Team</h2>
             </div>
             <a href="/about" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ ALL MEMBERS ]</a>
           </div>
         </div>
-        <div style={{ width: '100%', overflow: 'hidden' }}>
-          <TeamCardTIckerFramerComponent.Responsive xBKqQSKfs={true} />
+        <div style={{ width: '100%', padding: '0px 30px', display: 'flex', justifyContent: 'center' }}>
+          <TeamGrid />
         </div>
       </section>
       <section style={{ padding: '120px 0', backgroundColor: '#121212' }}>
@@ -137,7 +136,7 @@ export default function Home() {
 </section>
 <section style={{ padding: '0 clamp(16px, 3vw, 30px) clamp(60px, 10vw, 100px)' }}>
         <div style={{ maxWidth: '1076px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '80px' }}>
-          <h2 style={{ ...h2, textAlign: 'center' }}>Quick <em>/ Answers</em></h2>
+          <h2 style={{ ...h2, textAlign: 'center' }}>Quick <em>Answers</em></h2>
           <FaqDropdownFramerComponent.Responsive BOc7lhdZy="40px" />
         </div>
       </section>

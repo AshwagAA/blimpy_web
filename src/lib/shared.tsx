@@ -241,3 +241,25 @@ export function Navbar() {
 
 export const bg: React.CSSProperties = { background: 'rgb(18,18,18)', color: '#fff', paddingTop: '80px', minHeight: '100vh' }
 export const h2: React.CSSProperties = { fontFamily: 'Funnel Display', fontSize: 'clamp(40px, 8vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.04em' }
+
+// ─── TEAM GRID (static, replaces the old auto-scrolling ticker) ─────────────
+const TEAM = [
+  { name: 'Ashwag Alsayed', img: 'https://framerusercontent.com/images/EOypU6a3NEsdREefJi2bUJPmxI.jpg?width=1024&height=1024' },
+  { name: 'Catherine Muya', img: 'https://framerusercontent.com/images/mhmcqKSQyK6CfUjDR2xBsWWKXkM.jpg?width=947&height=947' },
+  { name: 'Mustafa Akasha', img: 'https://framerusercontent.com/images/q69wQc9sVJQZl7aUzQb1s4xcfw.jpg?width=687&height=852' },
+]
+
+export function TeamGrid() {
+  return (
+    <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+      {TEAM.map(({ name, img }) => (
+        <div key={name} style={{ flex: '1 1 280px', minWidth: '220px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ width: '100%', aspectRatio: '0.85', overflow: 'hidden' }}>
+            <img src={img} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1)', display: 'block' }} />
+          </div>
+          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.02em' }}>[ {name} ]</span>
+        </div>
+      ))}
+    </div>
+  )
+}

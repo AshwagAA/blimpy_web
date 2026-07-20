@@ -33,7 +33,7 @@ export default function BlogCardSlider() {
               Latest
             </h2>
             <h2 style={{ fontSize: 'clamp(48px,5vw,114px)', letterSpacing: '-0.06em', margin: 0, fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 400, color: '#fff' }}>
-              / Blogs
+              Blogs
             </h2>
           </div>
           <a href="/blog" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '14px', fontWeight: 600 }}>

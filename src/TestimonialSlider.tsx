@@ -98,7 +98,7 @@ export default function TestimonialSlider() {
               color: '#fff',
             }}
           >
-            / Clients are saying
+            Clients are saying
           </h2>
         </div>
         <a href="/about" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>
