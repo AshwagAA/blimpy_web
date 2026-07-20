@@ -1,3 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  background: rgb(18, 18, 18);
+}
+
+#root {
+  background: rgb(18, 18, 18);
+}
+
+/* Blog is temporarily hidden site-wide; this hides the link the
+   generated Framer footer renders for it (see footer.jsx, "Blogs"). */
+a[href="/blog"] {
+  display: none !important;
+}

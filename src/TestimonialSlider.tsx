@@ -1,41 +1,62 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface Testimonial {
   id: number;
   quote: string;
   author: string;
   role: string;
-  image: string;
 }
 
+// Only real, verified client testimonials belong here — no placeholder/demo entries.
 const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: 'Before Blimpy, our marketing spend was a complete black box. They rebuilt our tracking architecture from the ground up, integrating all our platforms into one reliable system so we finally know exactly which campaigns are driving revenue',
     author: 'Mohammed A Alsayed',
     role: 'CEO, VunaChain',
-    image: 'https://framerusercontent.com/images/testimonial-1.jpg',
-  },
-  {
-    id: 2,
-    quote: 'Their data analysis transformed how we approach campaign optimization. Blimpy gave us clarity we never had before.',
-    author: 'Jane Smith',
-    role: 'Marketing Director, TechCorp',
-    image: 'https://framerusercontent.com/images/testimonial-2.jpg',
-  },
-  {
-    id: 3,
-    quote: 'Working with Blimpy was a game-changer for our business. Highly recommend their services.',
-    author: 'Robert Johnson',
-    role: 'Founder, Innovation Labs',
-    image: 'https://framerusercontent.com/images/testimonial-3.jpg',
   },
 ];
 
+function initials(name: string) {
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+function Avatar({ name, size }: { name: string; size: number }) {
+  return (
+    <div
+      role="img"
+      aria-label={name}
+      style={{
+        width: size,
+        height: size,
+        borderRadius: '50%',
+        background: 'rgba(255,31,0,0.15)',
+        border: '1px solid rgba(255,31,0,0.4)',
+        color: '#ff8a70',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: size * 0.36,
+        fontWeight: 600,
+        flexShrink: 0,
+      }}
+    >
+      {initials(name)}
+    </div>
+  );
+}
+
 export default function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const hasMultiple = testimonials.length > 1;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -86,68 +107,76 @@ export default function TestimonialSlider() {
       </div>
 
       <div style={{ maxWidth: '1296px', width: '100%', display: 'flex', gap: '80px', alignItems: 'stretch' }}>
-        {/* Left side: Avatars and Navigation */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', justifyContent: 'space-between', minWidth: '150px' }}>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            {testimonials.map((_, index) => (
-              <div
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                style={{
-                  width: index === 0 ? '60px' : '50px',
-                  height: index === 0 ? '60px' : '50px',
-                  borderRadius: '50%',
-                  backgroundColor: index === currentIndex ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.1)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  border: index === currentIndex ? '2px solid #fff' : 'none',
-                }}
-              />
-            ))}
-          </div>
+        {hasMultiple && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', justifyContent: 'space-between', minWidth: '150px' }}>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+              {testimonials.map((t, index) => (
+                <button
+                  key={t.id}
+                  onClick={() => setCurrentIndex(index)}
+                  aria-label={`Show testimonial from ${t.author}`}
+                  style={{
+                    width: index === currentIndex ? '60px' : '50px',
+                    height: index === currentIndex ? '60px' : '50px',
+                    borderRadius: '50%',
+                    background: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    transition: 'all 0.3s',
+                    outline: index === currentIndex ? '2px solid #fff' : 'none',
+                    outlineOffset: '2px',
+                  }}
+                >
+                  <Avatar name={t.author} size={index === currentIndex ? 60 : 50} />
+                </button>
+              ))}
+            </div>
 
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <button
-              onClick={prevSlide}
-              style={{
-                background: 'transparent',
-                border: '1px solid rgba(255,255,255,0.3)',
-                color: '#fff',
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                cursor: 'pointer',
-                fontSize: '18px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              ←
-            </button>
-            <span style={{ color: '#fff', fontSize: '14px', minWidth: '40px', textAlign: 'center' }}>
-              {currentIndex + 1} / {testimonials.length}
-            </span>
-            <button
-              onClick={nextSlide}
-              style={{
-                background: 'transparent',
-                border: '1px solid rgba(255,255,255,0.3)',
-                color: '#fff',
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                cursor: 'pointer',
-                fontSize: '18px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              →
-            </button>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <button
+                onClick={prevSlide}
+                aria-label="Previous testimonial"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  color: '#fff',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  fontSize: '18px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                ←
+              </button>
+              <span style={{ color: '#fff', fontSize: '14px', minWidth: '40px', textAlign: 'center' }}>
+                {currentIndex + 1} / {testimonials.length}
+              </span>
+              <button
+                onClick={nextSlide}
+                aria-label="Next testimonial"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  color: '#fff',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  fontSize: '18px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                →
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Right side: Quote and Author */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '40px', justifyContent: 'space-between' }}>
@@ -165,11 +194,7 @@ export default function TestimonialSlider() {
           </p>
 
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <img
-              src={current.image}
-              alt={current.author}
-              style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
-            />
+            <Avatar name={current.author} size={50} />
             <div>
               <p style={{ fontSize: '14px', fontWeight: 600, color: '#fff', margin: 0 }}>{current.author}</p>
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0 0' }}>{current.role}</p>
@@ -182,10 +207,10 @@ export default function TestimonialSlider() {
       <div style={{ maxWidth: '1296px', width: '100%', display: 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center' }}>
         <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', margin: 0, textAlign: 'center' }}>Some Of Our Partners:</p>
         <div style={{ display: 'flex', gap: '60px', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>Altech Autonomous</span>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>Kenya Flying Labs</span>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>VunaChain</span>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>Umbrella</span>
+          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)' }}>Altech Autonomous</span>
+          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)' }}>Kenya Flying Labs</span>
+          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)' }}>VunaChain</span>
+          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)' }}>Umbrella</span>
         </div>
       </div>
     </section>

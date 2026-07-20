@@ -4,10 +4,43 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blimpy Analytics</title>
+        <title>Blimpy Analytics — Data & Creative Studio</title>
+        <meta name="description" content="Blimpy is a Nairobi-based data & creative studio. We build precision marketing data systems, dashboards, and creative strategy that stop wasted ad spend and drive predictable business growth." />
+        <link rel="canonical" href="https://blimpyanalytics.xyz/" />
+        <meta name="theme-color" content="#121212" />
+
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Blimpy Analytics" />
+        <meta property="og:title" content="Blimpy Analytics — Data & Creative Studio" />
+        <meta property="og:description" content="Blimpy bridges the gap between data science and creative strategy — precision marketing data systems, dashboards, and creative strategy for predictable business growth." />
+        <meta property="og:url" content="https://blimpyanalytics.xyz/" />
+        <meta property="og:image" content="https://blimpyanalytics.xyz/apple-touch-icon.png" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Blimpy Analytics — Data & Creative Studio" />
+        <meta name="twitter:description" content="Blimpy bridges the gap between data science and creative strategy — precision marketing data systems, dashboards, and creative strategy for predictable business growth." />
+        <meta name="twitter:image" content="https://blimpyanalytics.xyz/apple-touch-icon.png" />
     </head>
     <body>
         <div id="root"></div>
         <script type="module" src="/src/main.tsx"></script>
+
+        <!--
+          Static fallback so Netlify's build-time form parser can detect this form
+          (the real form only exists in the DOM after React renders it client-side,
+          which Netlify's crawler never executes). Field names must match exactly.
+        -->
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="contact" />
+            <input name="bot-field" />
+            <input type="text" name="firstName" />
+            <input type="text" name="lastName" />
+            <input type="email" name="email" />
+            <input type="text" name="company" />
+            <textarea name="message"></textarea>
+        </form>
     </body>
 </html>
