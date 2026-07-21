@@ -257,73 +257,6 @@ var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 												50) +
 											0,
 									),
-									pixelHeight: 390,
-									pixelWidth: 3504,
-									positionX: "center",
-									positionY: "center",
-									sizes: `min(max((${componentViewport?.width || "100vw"} - 72px) / 4, 1px), 306px)`,
-									src: "https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?width=3504&height=390",
-									srcSet:
-										"https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=512&width=3504&height=390 512w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=1024&width=3504&height=390 1024w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=2048&width=3504&height=390 2048w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?width=3504&height=390 3504w",
-								}}
-								className={"framer-1tuwmsa"}
-								data-border={true}
-								data-framer-name={"Logo"}
-								layoutDependency={layoutDependency}
-								layoutId={"uXhF3_ChT"}
-								style={{
-									"--border-bottom-width": "1px",
-									"--border-color":
-										"var(--token-aad9f953-7a89-4aa6-8b88-7994cb74103e, rgba(255, 255, 255, 0.1))",
-									"--border-left-width": "1px",
-									"--border-right-width": "1px",
-									"--border-style": "solid",
-									"--border-top-width": "1px",
-								}}
-								{...addPropertyOverrides(
-									{
-										XWOZFZR80: {
-											background: {
-												alt: "Image",
-												fit: "fit",
-												loading: getLoadingLazyAtYPosition(
-													(componentViewport?.y || 0) +
-														0 +
-														(((componentViewport?.height || 166) - 0 - 239.6) /
-															2 +
-															33.6 +
-															30) +
-														0 +
-														0,
-												),
-												pixelHeight: 390,
-												pixelWidth: 3504,
-												positionX: "center",
-												positionY: "center",
-												sizes: `min(max((${componentViewport?.width || "100vw"} - 16px) / 2, 50px), 306px)`,
-												src: "https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?width=3504&height=390",
-												srcSet:
-													"https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=512&width=3504&height=390 512w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=1024&width=3504&height=390 1024w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?scale-down-to=2048&width=3504&height=390 2048w,https://framerusercontent.com/images/UIRKhcV3YC9kJ496l8wn9RUZUc.png?width=3504&height=390 3504w",
-											},
-										},
-									},
-									baseVariant,
-									gestureVariant,
-								)}
-							/>
-							<Image
-								suppressHydrationWarning={true}
-								background={{
-									alt: "Image",
-									fit: "fit",
-									loading: getLoadingLazyAtYPosition(
-										(componentViewport?.y || 0) +
-											0 +
-											(((componentViewport?.height || 153) - 0 - 163.6) / 2 +
-												33.6 +
-												50) +
-											0,
-									),
 									pixelHeight: 469,
 									pixelWidth: 1003,
 									positionX: "center",
@@ -438,65 +371,6 @@ var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 												src: "https://framerusercontent.com/images/68toVMCNAKzmcPnSkjfe8WH6os.png?width=2000&height=423",
 												srcSet:
 													"https://framerusercontent.com/images/68toVMCNAKzmcPnSkjfe8WH6os.png?scale-down-to=512&width=2000&height=423 512w,https://framerusercontent.com/images/68toVMCNAKzmcPnSkjfe8WH6os.png?scale-down-to=1024&width=2000&height=423 1024w,https://framerusercontent.com/images/68toVMCNAKzmcPnSkjfe8WH6os.png?width=2000&height=423 2000w",
-											},
-										},
-									},
-									baseVariant,
-									gestureVariant,
-								)}
-							/>
-							<Image
-								suppressHydrationWarning={true}
-								background={{
-									alt: "Image",
-									fit: "fill",
-									loading: getLoadingLazyAtYPosition(
-										(componentViewport?.y || 0) +
-											0 +
-											(((componentViewport?.height || 153) - 0 - 163.6) / 2 +
-												33.6 +
-												50) +
-											0,
-									),
-									pixelHeight: 80,
-									pixelWidth: 306,
-									sizes: `min(max((${componentViewport?.width || "100vw"} - 72px) / 4, 1px), 306px)`,
-									src: "https://framerusercontent.com/images/90MN5dmAaHGFjKi6n5aufwLijh4.svg?width=306&height=80",
-								}}
-								className={"framer-1m4zr6f"}
-								data-border={true}
-								data-framer-name={"Logo"}
-								layoutDependency={layoutDependency}
-								layoutId={"CJFJ4mdDc"}
-								style={{
-									"--border-bottom-width": "1px",
-									"--border-color":
-										"var(--token-aad9f953-7a89-4aa6-8b88-7994cb74103e, rgba(255, 255, 255, 0.1))",
-									"--border-left-width": "1px",
-									"--border-right-width": "1px",
-									"--border-style": "solid",
-									"--border-top-width": "1px",
-								}}
-								{...addPropertyOverrides(
-									{
-										XWOZFZR80: {
-											background: {
-												alt: "Image",
-												fit: "fill",
-												loading: getLoadingLazyAtYPosition(
-													(componentViewport?.y || 0) +
-														0 +
-														(((componentViewport?.height || 166) - 0 - 239.6) /
-															2 +
-															33.6 +
-															30) +
-														0 +
-														96,
-												),
-												pixelHeight: 80,
-												pixelWidth: 306,
-												sizes: `min(max((${componentViewport?.width || "100vw"} - 16px) / 2, 50px), 306px)`,
-												src: "https://framerusercontent.com/images/90MN5dmAaHGFjKi6n5aufwLijh4.svg?width=306&height=80",
 											},
 										},
 									},

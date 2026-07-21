@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import AboutButtonFramerComponent from '../framer/about-button.jsx'
 import ServiceCardWrapperFramerComponent from '../framer/service-card-wrapper.jsx'
-import TestimonialSliderFramerComponent from '../framer/testimonial-slider.jsx'
 import BrandAreaFramerComponent from '../framer/brand-area.jsx'
 import FaqDropdownFramerComponent from '../framer/faq-dropdown.jsx'
+import TestimonialSlider from '../TestimonialSlider'
 import { workItems } from '../data/work'
 import { bg, h2, TextReveal, ScrollHighlight, Counter, FadeInOnScroll, FunnelCanvas, TeamGrid } from '../lib/shared'
 
@@ -19,9 +20,9 @@ function Hero() {
           <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
             <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 11vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#ff1f00' }}>Blimpy</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '11px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '27px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: 'clamp(12px, 1.5vw, 14px)', color: 'rgba(255,255,255,0.5)', maxWidth: '190px', lineHeight: '1.4' }}>Blimpy bridges the gap between data science and creative strategy</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '27px' }}>
             <TextReveal text="Data & Creative Studio." style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontSize: 'clamp(36px, 9vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }} />
+            <span style={{ fontSize: 'clamp(9px, 1.9vw, 14px)', color: 'rgba(255,255,255,0.5)', lineHeight: '1.4', whiteSpace: 'nowrap' }}>Blimpy bridges the gap between data science and creative strategy</span>
           </div>
         </div>
         <FunnelCanvas />
@@ -69,7 +70,7 @@ export default function Home() {
     <div style={{ position: 'sticky', top: '100px', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
       <h2 style={{ ...h2, mixBlendMode: 'difference' }}>Featured Work</h2>
     </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '10px 79px', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '10px 79px', position: 'relative', zIndex: 2 }}>
   {[[workItems[0], workItems[2]], [workItems[1], workItems[3]]].map((column, colIndex) => (
     <div key={colIndex} style={{ display: 'flex', flexDirection: 'column', gap: '68px' }}>
       {column.map(({ num, title, tags, img, slug }) => (
@@ -98,7 +99,7 @@ export default function Home() {
             </div>
             <a href="/service" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ Explore More ]</a>
           </div>
-          <ServiceCardWrapperFramerComponent.Responsive />
+          <ServiceCardWrapperFramerComponent.Responsive style={{ width: '100%' }} />
         </div>
       </section>
       <section style={{ padding: '20px 0px 0px 0px', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '115px', alignItems: 'center' }}>
@@ -128,16 +129,23 @@ export default function Home() {
     }}>
       Things / Clients are saying that make us blush
     </h2>
-    <TestimonialSliderFramerComponent.Responsive />
+    <TestimonialSlider />
     <div style={{ marginTop: '80px' }}>
-      <BrandAreaFramerComponent.Responsive />
+      <BrandAreaFramerComponent.Responsive style={{ width: '100%' }} />
     </div>
   </div>
 </section>
 <section style={{ padding: '0 clamp(16px, 3vw, 30px) clamp(60px, 10vw, 100px)' }}>
         <div style={{ maxWidth: '1076px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '80px' }}>
           <h2 style={{ ...h2, textAlign: 'center' }}>Quick <em>Answers</em></h2>
-          <FaqDropdownFramerComponent.Responsive BOc7lhdZy="40px" />
+          <FaqDropdownFramerComponent.Responsive style={{ width: '100%' }} BOc7lhdZy="40px" />
+        </div>
+      </section>
+      <section style={{ padding: 'clamp(60px, 12vw, 140px) clamp(16px, 3vw, 30px) clamp(100px, 15vw, 180px)', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '100%', maxWidth: '760px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', textAlign: 'center' }}>
+          <h2 style={h2}>Ready to <em>Grow</em>?</h2>
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '480px', lineHeight: '1.6' }}>Stop guessing. Start tracking what actually works.</p>
+          <Link to="/contact" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '14px 28px' }}>[ Contact Us ]</Link>
         </div>
       </section>
     </div>

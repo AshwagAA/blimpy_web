@@ -860,7 +860,7 @@ var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
 											gap: "6px",
 											width: "fit-content",
 											textDecoration: "none",
-											color: "#fff",
+											color: "#ff1f00",
 											fontSize: "14px",
 											fontFamily: "Funnel Display, sans-serif",
 											border: "1px solid rgba(255,255,255,0.3)",

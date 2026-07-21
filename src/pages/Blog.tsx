@@ -26,7 +26,7 @@ export default function Blog() {
         <div style={{ width: '100%', maxWidth: '1296px' }}>
           <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Latest <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic' }}>Blogs</em></h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '80px' }}>Stay informed and inspired with insights, tips, and trends from the digital world.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '60px 32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '60px 32px' }}>
             {blogPosts.map(({ title, date, slug }) => (
   <a key={slug} href={'/blog/' + slug} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

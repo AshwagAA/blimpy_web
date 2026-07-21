@@ -1,6 +1,6 @@
 import '@fontsource/gasoek-one'
 import './framer/styles.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import FooterFramerComponent from './framer/footer.jsx'
 import { Navbar, bg } from './lib/shared'
@@ -22,10 +22,15 @@ function RouteFallback() {
   return <div style={bg} />
 }
 
-// ─── APP ─────────────────────────────────────────────────────────────────────
-export default function App() {
+// The footer's "Let's Talk" heading + "[ Contact Us ]" button is only
+// relevant on the Services page (every other page already has its own
+// end-of-page CTA banner) — hidden elsewhere via .footer-cta-hidden in
+// index.css since the footer itself renders once, outside <Routes>.
+function AppShell() {
+  const { pathname } = useLocation()
+  const showFooterCta = pathname === '/service'
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
@@ -41,7 +46,18 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      <FooterFramerComponent.Responsive />
+      <div className={showFooterCta ? undefined : 'footer-cta-hidden'}>
+        <FooterFramerComponent.Responsive style={{ width: '100%' }} />
+      </div>
+    </>
+  )
+}
+
+// ─── APP ─────────────────────────────────────────────────────────────────────
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
     </BrowserRouter>
   )
 }

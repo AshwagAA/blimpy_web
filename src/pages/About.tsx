@@ -1,5 +1,5 @@
 import CareerCardFramerComponent from '../framer/career-card.jsx'
-import { bg, h2, Counter, TeamGrid } from '../lib/shared'
+import { bg, h2, Counter, TeamGrid, solidCtaStyle } from '../lib/shared'
 
 export default function About() {
   return (
@@ -44,10 +44,20 @@ export default function About() {
         <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexDirection: 'column', gap: '115px' }}>
           <h2 style={h2}>Make a <em>Career</em></h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <CareerCardFramerComponent.Responsive zFZoH0j0F="Marketing Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
-            <CareerCardFramerComponent.Responsive zFZoH0j0F="Visual UI Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
-            <CareerCardFramerComponent.Responsive zFZoH0j0F="Data Engineer" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
+            <CareerCardFramerComponent.Responsive
+              style={{ width: '100%' }} zFZoH0j0F="Marketing Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
+            <CareerCardFramerComponent.Responsive
+              style={{ width: '100%' }} zFZoH0j0F="Visual UI Specialist" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
+            <CareerCardFramerComponent.Responsive
+              style={{ width: '100%' }} zFZoH0j0F="Data Engineer" A8FY0H4ac="Nairobi, Kenya" AlHdDw7ti="Remote" MsiDjIQY0="Listed on September 15, 2025" />
           </div>
+        </div>
+      </section>
+      <section style={{ padding: 'clamp(60px, 12vw, 140px) clamp(16px, 3vw, 30px) clamp(100px, 15vw, 180px)', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '100%', maxWidth: '760px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', textAlign: 'center' }}>
+          <h2 style={h2}>Think You'd <em>Fit In</em>?</h2>
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '480px', lineHeight: '1.6' }}>We're a small team that cares about data as much as design. If that sounds like you, take a look at the roles above and send us your application.</p>
+          <a href="mailto:ashwag@blimpyanalytics.xyz?subject=Job%20Application" style={solidCtaStyle}>Apply Now</a>
         </div>
       </section>
     </div>

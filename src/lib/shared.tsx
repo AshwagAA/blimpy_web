@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const FUNNEL_HTML = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
@@ -192,13 +193,18 @@ export function FunnelCanvas() {
 // ─── NAVBAR ──────────────────────────────────────────────────────────────────
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const linkStyle: React.CSSProperties = { color: '#fff', textDecoration: 'none', fontSize: '16px', fontFamily: 'Funnel Display', transition: 'color 0.2s' }
+  const { pathname } = useLocation()
+  const isActive = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/')
+  const linkStyle: React.CSSProperties = { color: '#fff', textDecoration: 'none', fontSize: '16px', fontFamily: 'Funnel Display', transition: 'color 0.2s, background-color 0.2s', padding: '6px 14px', borderRadius: '6px' }
   return (
     <>
       <style>{`
         .nav-link:hover { color: #ff1f00 !important; }
+        .nav-link-active { background: rgba(255,255,255,0.1); }
         .nav-contact:hover { background: #ff1f00 !important; border-color: #ff1f00 !important; }
+        .nav-contact.nav-link-active { background: rgba(255,255,255,0.1); }
         .mobile-menu { display: none; }
+        .mobile-link { padding: 6px 14px; border-radius: 6px; }
         @media (max-width: 900px) {
           .nav-links { display: none !important; }
           .nav-hamburger { display: flex !important; }
@@ -220,9 +226,9 @@ export function Navbar() {
         </div>
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '24px', flex: '1', justifyContent: 'flex-end' }}>
           {[['/', 'Home'], ['/about', 'About'], ['/service', 'Services'], ['/work', 'Work'], ['/pricing', 'Pricing']].map(([href, label]) => (
-            <a key={href} href={href} className="nav-link" style={linkStyle}>{label}</a>
+            <a key={href} href={href} className={`nav-link${isActive(href) ? ' nav-link-active' : ''}`} style={linkStyle}>{label}</a>
           ))}
-          <a href="/contact" className="nav-link nav-contact" style={{ ...linkStyle, border: '1px solid #fff', padding: '8px 16px', transition: 'background 0.2s, border-color 0.2s', whiteSpace: 'nowrap' }}>CONTACT US ↗</a>
+          <a href="/contact" className={`nav-link nav-contact${isActive('/contact') ? ' nav-link-active' : ''}`} style={{ ...linkStyle, border: '1px solid #fff', padding: '8px 16px', transition: 'background 0.2s, border-color 0.2s', whiteSpace: 'nowrap' }}>CONTACT US ↗</a>
         </div>
         <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} style={{ display: 'none', background: 'none', border: 'none', color: '#fff', cursor: 'pointer', padding: '8px' }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -232,7 +238,7 @@ export function Navbar() {
       </nav>
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} style={{ position: 'fixed', top: '80px', left: 0, right: 0, background: 'rgb(18,18,18)', zIndex: 999, flexDirection: 'column', padding: '24px 30px', gap: '24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         {[['/', 'Home'], ['/about', 'About'], ['/service', 'Services'], ['/work', 'Work'], ['/pricing', 'Pricing'], ['/contact', 'Contact Us']].map(([href, label]) => (
-          <a key={href} href={href} onClick={() => setMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '20px', fontFamily: 'Funnel Display' }}>{label}</a>
+          <a key={href} href={href} onClick={() => setMenuOpen(false)} className={`mobile-link${isActive(href) ? ' nav-link-active' : ''}`} style={{ color: '#fff', textDecoration: 'none', fontSize: '20px', fontFamily: 'Funnel Display' }}>{label}</a>
         ))}
       </div>
     </>
@@ -241,6 +247,23 @@ export function Navbar() {
 
 export const bg: React.CSSProperties = { background: 'rgb(18,18,18)', color: '#fff', paddingTop: '80px', minHeight: '100vh' }
 export const h2: React.CSSProperties = { fontFamily: 'Funnel Display', fontSize: 'clamp(40px, 8vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.04em' }
+
+// Solid primary-CTA button style (matches the Contact form's "SEND MESSAGE" button)
+export const solidCtaStyle: React.CSSProperties = {
+  display: 'inline-block',
+  textAlign: 'center',
+  textDecoration: 'none',
+  background: '#ff1f00',
+  border: 'none',
+  color: '#fff',
+  padding: '16px 32px',
+  fontSize: '14px',
+  cursor: 'pointer',
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  fontFamily: 'Funnel Display, sans-serif',
+  fontWeight: 600,
+}
 
 // ─── TEAM GRID (static, replaces the old auto-scrolling ticker) ─────────────
 const TEAM = [

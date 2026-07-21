@@ -14,3 +14,102 @@ body {
 a[href="/blog"] {
   display: none !important;
 }
+
+/* Pricing card price/period row (framer-4ol9cr) forces a single
+   unbreakable line ("from 220,000 KES/ month"). flex-wrap:wrap only
+   breaks it onto two lines when there isn't room, so this is safe to
+   apply everywhere — it also lets cards go back to a real 3-column
+   row on desktop instead of needing ~460px each to avoid overflow. */
+.framer-4ol9cr {
+  flex-wrap: wrap !important;
+}
+
+/* Footer's bottom copyright bar (framer-7gc67r: "© 2026 Copyright -
+   Blimpy" + "All rights reserved.") stays in a single non-wrapping row
+   and overflows on phones as narrow/common as 390px (iPhone 12-15). */
+@media (max-width: 480px) {
+  .framer-7gc67r {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* Career card's "Tags: X" / "Listed on <date>" row (framer-1wb0k0l)
+   and the "Location" / "Arrangement" row above it (framer-1e6xxd0)
+   don't wrap, so the date overflows on phones up to ~390px wide. */
+@media (max-width: 420px) {
+  .framer-1wb0k0l,
+  .framer-1e6xxd0 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+/* Footer's quick-links row (framer-cajq3t: Home/About/Services/Work/
+   Pricing/Contact) is a non-wrapping space-between row that overflows
+   by ~50px on the narrowest phones. */
+@media (max-width: 350px) {
+  .framer-cajq3t {
+    flex-wrap: wrap !important;
+    row-gap: 12px !important;
+  }
+}
+
+/* Career card's "Listed on <date>" text (framer-dme924) is
+   white-space: pre and doesn't fit on the narrowest phones even after
+   the row above wraps. Let it break like normal text there. */
+@media (max-width: 350px) {
+  .framer-dme924 {
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Footer quick-links (Home/About/Services/Work/Pricing/Contact) render
+   with text-color rgb(18,18,18) — identical to the page background —
+   so they're invisible until hovered (when they turn brand-red), and
+   each link also carries a translucent black background that reads as
+   a stray shaded box behind the (invisible) text. Fix both: visible
+   white by default, still red on hover, no background box. */
+.framer-5IOyp .framer-cajq3t a.framer-styles-preset-1bttbk4 {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.framer-5IOyp .framer-cajq3t a.framer-styles-preset-1bttbk4:hover {
+  color: rgb(243, 30, 1) !important;
+}
+
+/* Footer quick-links render in a different order (About, Pricing, Work,
+   Blogs, Contact) than the header nav (Home, About, Services, Work,
+   Pricing, Contact). Reorder the footer's links to follow the same
+   relative order as the header. */
+.framer-5IOyp .framer-cajq3t .framer-88874l {
+  order: 1; /* About */
+}
+.framer-5IOyp .framer-cajq3t .framer-1bjr7nb {
+  order: 2; /* Work */
+}
+.framer-5IOyp .framer-cajq3t .framer-w5zdq9 {
+  order: 3; /* Pricing */
+}
+.framer-5IOyp .framer-cajq3t .framer-t1hdsd {
+  order: 4; /* Contact */
+}
+
+/* The Blog link's <a> is hidden above, but its wrapper div still occupies
+   a slot in the row's space-between layout, skewing the spacing of the
+   remaining links. Hide the wrapper itself to close that gap. */
+.framer-5IOyp .framer-cajq3t .framer-1hwpanj {
+  display: none !important;
+}
+
+/* Footer's "Let's Talk" heading + "[ Contact Us ]" button (framer-1704do7)
+   duplicates the end-of-page CTA banner every other page already has, so
+   it's only shown on the Services page (see .footer-cta-hidden in
+   App.tsx). Its sibling (the social links list) still lays out fine
+   alone in the row once this is hidden. */
+.footer-cta-hidden .framer-1704do7 {
+  display: none !important;
+}
