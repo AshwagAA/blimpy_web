@@ -872,7 +872,7 @@ var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
 									id: "loMCCkQ2s",
 									layoutId: "loMCCkQ2s",
 									O7apdCcJm:
-										"No, most traditional agencies either make pretty ads or stare at spreadsheets, whereas Blimpy does both.  Our philosophy is to use our skills to create systems  that a pull insights and dictates strategy, providing relief from operational chaos",
+										"No, most traditional agencies either make pretty ads or stare at spreadsheets, whereas Blimpy does both. Our philosophy is to use our skills to create systems that pull insights and dictates strategy, providing relief from operational chaos",
 									style: {
 										width: "100%",
 									},

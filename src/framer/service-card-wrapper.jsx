@@ -1582,7 +1582,7 @@ var Component3 = /* @__PURE__ */ React3.forwardRef(function (props, ref) {
 									layoutId: "sUoThKVTY",
 									nw1uBaV6t: "Brand Identity Design",
 									q11frw_6a:
-										"We CONNECT your scattered marketing platforms\u2014socials, website, and CRM\u2014into one reliable hub (GA4). We fix your tracking infrastructure so you always know exactly where your leads come from.",
+										"We CONNECT your scattered marketing platforms, socials, website, and CRM, into one reliable hub. We fix your tracking infrastructure so you always know exactly where your leads come from.",
 									QAmPNlhZE: addImageAlt(
 										{
 											pixelHeight: 265,
@@ -1680,6 +1680,110 @@ var Component3 = /* @__PURE__ */ React3.forwardRef(function (props, ref) {
 									layoutId: "cvmU37lSi",
 									nw1uBaV6t: "Brand Identity Design",
 									q11frw_6a:
+										"We go beyond the numbers to tell you what they mean. We monitor your funnels and Cost Per Lead (CPL) to extract actionable insights that stop wasted ad spend and increase your ROI.",
+									QAmPNlhZE: addImageAlt(
+										{
+											pixelHeight: 652,
+											pixelWidth: 614,
+											src: "https://framerusercontent.com/images/HZNX64mZrWqrMbpQRIt7YNePNM0.png?width=614&height=652",
+											srcSet:
+												"https://framerusercontent.com/images/HZNX64mZrWqrMbpQRIt7YNePNM0.png?width=614&height=652 614w",
+										},
+										"Image",
+									),
+									style: {
+										width: "100%",
+									},
+									TDgHPEQwH: "Brand Strategy",
+									variant: matchVariant("iYvm_teWy"),
+									VbzDQR2gK: "How We Work",
+									width: "100%",
+									wosVXczZ8: wosVXczZ8fsx9u6,
+									zlPOMfz7O: "Data Analysis",
+									...addPropertyOverrides3(
+										{
+											aqDZcY3HY: {
+												variant: matchVariant("xIDFABIL6"),
+												wosVXczZ8: wosVXczZ8l09aup,
+											},
+											bsbqcBHjk: {
+												variant: matchVariant("bXjwysvDb"),
+												wosVXczZ8: wosVXczZ8b9tzhz,
+											},
+											CRDBQA8Ni: {
+												variant: matchVariant("bsaUq_sxi"),
+												wosVXczZ8: wosVXczZ8l09aup,
+											},
+											diJpg71nc: {
+												nw1uBaV6t: "Funnel",
+												QAmPNlhZE: addImageAlt(
+													{
+														pixelHeight: 3264,
+														pixelWidth: 4764,
+														src: "https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?width=4764&height=3264",
+														srcSet:
+															"https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=512&width=4764&height=3264 512w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=1024&width=4764&height=3264 1024w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=2048&width=4764&height=3264 2048w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=4096&width=4764&height=3264 4096w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?width=4764&height=3264 4764w",
+													},
+													"Image",
+												),
+												TDgHPEQwH: "Optimization",
+												variant: matchVariant("ebies0UJf"),
+											},
+											HnQjsRIb5: {
+												variant: matchVariant("xIDFABIL6"),
+												wosVXczZ8: wosVXczZ8l09aup,
+											},
+											KW98uve0H: {
+												variant: matchVariant("i7ExtuCiy"),
+												wosVXczZ8: wosVXczZ8b9tzhz,
+											},
+											pZ2xXWQV8: {
+												variant: matchVariant("xIDFABIL6"),
+												wosVXczZ8: wosVXczZ8l09aup,
+											},
+											TP9pnK002: {
+												variant: matchVariant("bXjwysvDb"),
+												wosVXczZ8: wosVXczZ8b9tzhz,
+											},
+											YLbpgkMIK: {
+												variant: matchVariant("bXjwysvDb"),
+												wosVXczZ8: wosVXczZ8b9tzhz,
+											},
+										},
+										baseVariant,
+										gestureVariant,
+									),
+								})}
+							</SmartComponentScopedContainer>
+						</ComponentViewportProvider>
+						<ComponentViewportProvider
+							suppressHydrationWarning={true}
+							height={539}
+							width={componentViewport?.width || "100vw"}
+							y={
+								(componentViewport?.y || 0) +
+								0 +
+								(((componentViewport?.height || 200) - 0 - 2157) / 2 + 1079 + 0)
+							}
+						>
+							<SmartComponentScopedContainer
+								suppressHydrationWarning={true}
+								className={"framer-17l00rh-container"}
+								layoutDependency={layoutDependency}
+								layoutId={"FOHIrSS4e-container"}
+								nodeId={"FOHIrSS4e"}
+								rendersWithMotion={true}
+								scopeId={"dgJgDbddj"}
+							>
+								{_jsx3(stdin_default3, {
+									suppressHydrationWarning: true,
+									b4x1S95yl: "003",
+									cJN5npylT: "Tool",
+									height: "100%",
+									id: "FOHIrSS4e",
+									layoutId: "FOHIrSS4e",
+									nw1uBaV6t: "Brand Identity Design",
+									q11frw_6a:
 										"We turn messy, overwhelming numbers into clean, real-time dashboards . You get total visibility over your performance at a glance",
 									QAmPNlhZE: addImageAlt(
 										{
@@ -1750,110 +1854,6 @@ var Component3 = /* @__PURE__ */ React3.forwardRef(function (props, ref) {
 											YLbpgkMIK: {
 												variant: matchVariant("i7ExtuCiy"),
 												wosVXczZ8: wosVXczZ8lcpf15,
-											},
-										},
-										baseVariant,
-										gestureVariant,
-									),
-								})}
-							</SmartComponentScopedContainer>
-						</ComponentViewportProvider>
-						<ComponentViewportProvider
-							suppressHydrationWarning={true}
-							height={539}
-							width={componentViewport?.width || "100vw"}
-							y={
-								(componentViewport?.y || 0) +
-								0 +
-								(((componentViewport?.height || 200) - 0 - 2157) / 2 + 1079 + 0)
-							}
-						>
-							<SmartComponentScopedContainer
-								suppressHydrationWarning={true}
-								className={"framer-17l00rh-container"}
-								layoutDependency={layoutDependency}
-								layoutId={"FOHIrSS4e-container"}
-								nodeId={"FOHIrSS4e"}
-								rendersWithMotion={true}
-								scopeId={"dgJgDbddj"}
-							>
-								{_jsx3(stdin_default3, {
-									suppressHydrationWarning: true,
-									b4x1S95yl: "003",
-									cJN5npylT: "Tool",
-									height: "100%",
-									id: "FOHIrSS4e",
-									layoutId: "FOHIrSS4e",
-									nw1uBaV6t: "Brand Identity Design",
-									q11frw_6a:
-										"We go beyond the numbers to tell you what they mean. We monitor your funnels and Cost Per Lead (CPL) to extract actionable insights that stop wasted ad spend and increase your ROI.",
-									QAmPNlhZE: addImageAlt(
-										{
-											pixelHeight: 652,
-											pixelWidth: 614,
-											src: "https://framerusercontent.com/images/HZNX64mZrWqrMbpQRIt7YNePNM0.png?width=614&height=652",
-											srcSet:
-												"https://framerusercontent.com/images/HZNX64mZrWqrMbpQRIt7YNePNM0.png?width=614&height=652 614w",
-										},
-										"Image",
-									),
-									style: {
-										width: "100%",
-									},
-									TDgHPEQwH: "Brand Strategy",
-									variant: matchVariant("iYvm_teWy"),
-									VbzDQR2gK: "How We Work",
-									width: "100%",
-									wosVXczZ8: wosVXczZ8fsx9u6,
-									zlPOMfz7O: "Data Analysis",
-									...addPropertyOverrides3(
-										{
-											aqDZcY3HY: {
-												variant: matchVariant("xIDFABIL6"),
-												wosVXczZ8: wosVXczZ8l09aup,
-											},
-											bsbqcBHjk: {
-												variant: matchVariant("bXjwysvDb"),
-												wosVXczZ8: wosVXczZ8b9tzhz,
-											},
-											CRDBQA8Ni: {
-												variant: matchVariant("bsaUq_sxi"),
-												wosVXczZ8: wosVXczZ8l09aup,
-											},
-											diJpg71nc: {
-												nw1uBaV6t: "Funnel",
-												QAmPNlhZE: addImageAlt(
-													{
-														pixelHeight: 3264,
-														pixelWidth: 4764,
-														src: "https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?width=4764&height=3264",
-														srcSet:
-															"https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=512&width=4764&height=3264 512w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=1024&width=4764&height=3264 1024w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=2048&width=4764&height=3264 2048w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?scale-down-to=4096&width=4764&height=3264 4096w,https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?width=4764&height=3264 4764w",
-													},
-													"Image",
-												),
-												TDgHPEQwH: "Optimization",
-												variant: matchVariant("ebies0UJf"),
-											},
-											HnQjsRIb5: {
-												variant: matchVariant("xIDFABIL6"),
-												wosVXczZ8: wosVXczZ8l09aup,
-											},
-											KW98uve0H: {
-												variant: matchVariant("i7ExtuCiy"),
-												wosVXczZ8: wosVXczZ8b9tzhz,
-											},
-											pZ2xXWQV8: {
-												variant: matchVariant("xIDFABIL6"),
-												wosVXczZ8: wosVXczZ8l09aup,
-											},
-											TP9pnK002: {
-												variant: matchVariant("bXjwysvDb"),
-												wosVXczZ8: wosVXczZ8b9tzhz,
-											},
-											YLbpgkMIK: {
-												variant: matchVariant("bXjwysvDb"),
-												wosVXczZ8: wosVXczZ8b9tzhz,
 											},
 										},
 										baseVariant,
