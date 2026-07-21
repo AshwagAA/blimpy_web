@@ -32,11 +32,11 @@ export default function BlogCardSlider() {
             <h2 style={{ fontSize: 'clamp(48px,5vw,114px)', letterSpacing: '-0.06em', margin: 0, fontFamily: 'Funnel Display', fontWeight: 400, color: '#fff' }}>
               Latest
             </h2>
-            <h2 style={{ fontSize: 'clamp(48px,5vw,114px)', letterSpacing: '-0.06em', margin: 0, fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 400, color: '#fff' }}>
+            <h2 style={{ fontSize: 'clamp(48px,5vw,114px)', letterSpacing: '-0.06em', margin: 0, fontFamily: 'Funnel Display', fontStyle: 'italic', fontWeight: 400, color: '#fff' }}>
               Blogs
             </h2>
           </div>
-          <a href="/blog" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '14px', fontWeight: 600 }}>
+          <a href="/blog" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '16px', fontWeight: 600 }}>
             [ ALL ARTICLES ]
           </a>
         </div>
@@ -48,7 +48,7 @@ export default function BlogCardSlider() {
                 <img src="https://framerusercontent.com/images/ml9fEMwAsiQ3of9IQqPaQRzBG0E.png" alt="" style={{ width: '60px', height: '60px', objectFit: 'contain', opacity: 0.25 }} />
               </div>
 
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '16px', color: 'rgba(255,255,255,0.5)' }}>
                 <div style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.1)' }} />
                 <span>{post.author}</span>
                 <span>•</span>

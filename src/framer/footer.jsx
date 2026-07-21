@@ -854,6 +854,7 @@ var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
 									<div style={{ flexBasis: "100%", width: "100%", marginTop: "16px" }}>
 									<a
 										href="/contact"
+										className="ghost-cta"
 										style={{
 											display: "inline-flex",
 											alignItems: "center",
@@ -861,7 +862,7 @@ var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
 											width: "fit-content",
 											textDecoration: "none",
 											color: "#ff1f00",
-											fontSize: "14px",
+											fontSize: "16px",
 											fontFamily: "Funnel Display, sans-serif",
 											border: "1px solid rgba(255,255,255,0.3)",
 											padding: "12px 24px",

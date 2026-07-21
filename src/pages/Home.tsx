@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
 import AboutButtonFramerComponent from '../framer/about-button.jsx'
-import ServiceCardWrapperFramerComponent from '../framer/service-card-wrapper.jsx'
 import BrandAreaFramerComponent from '../framer/brand-area.jsx'
 import FaqDropdownFramerComponent from '../framer/faq-dropdown.jsx'
 import TestimonialSlider from '../TestimonialSlider'
 import { workItems } from '../data/work'
-import { bg, h2, TextReveal, ScrollHighlight, Counter, FadeInOnScroll, FunnelCanvas, TeamGrid } from '../lib/shared'
+import { bg, h2, TextReveal, ScrollHighlight, Counter, FadeInOnScroll, FunnelCanvas, TeamGrid, ServicesAccordion } from '../lib/shared'
 
 // ─── HERO ────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -15,14 +14,13 @@ function Hero() {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
             <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 11vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }}>We Are</span>
-            <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(13px, 1.6vw, 16px)', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.02em' }}>[ Est.2025 ]</span>
+            <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(14px, 1.8vw, 16px)', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.02em' }}>[ Est.2025 ]</span>
           </div>
           <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
             <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 11vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#ff1f00' }}>Blimpy</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '27px' }}>
-            <TextReveal text="Data & Creative Studio." style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontSize: 'clamp(36px, 9vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }} />
-            <span style={{ fontSize: 'clamp(9px, 1.9vw, 14px)', color: 'rgba(255,255,255,0.5)', lineHeight: '1.4', whiteSpace: 'nowrap' }}>Blimpy bridges the gap between data science and creative strategy</span>
+            <TextReveal text="Data & Creative Studio." style={{ fontFamily: 'Funnel Display', fontStyle: 'italic', fontSize: 'clamp(36px, 9vw, 114px)', lineHeight: '0.9', letterSpacing: '-0.06em', color: '#fff' }} />
           </div>
         </div>
         <FunnelCanvas />
@@ -76,12 +74,12 @@ export default function Home() {
       {column.map(({ num, title, tags, img, slug }) => (
         <FadeInOnScroll key={num}>
           <a href={'/work/' + slug} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.05em' }}>{num}</span>
+            <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.05em' }}>{num}</span>
             <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
               <img src={img} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <h3 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(20px, 2.5vw, 28px)', letterSpacing: '-0.02em', margin: 0, color: '#fff', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color = '#ff1f00')} onMouseLeave={e => (e.currentTarget.style.color = '#fff')}>{title}</h3>
-            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{tags.join(' • ')}</p>
+            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{tags.join(' • ')}</p>
           </a>
         </FadeInOnScroll>
       ))}
@@ -92,14 +90,14 @@ export default function Home() {
  </section>
  <section style={{ padding: '80px 30px 160px 30px', overflow: 'hidden', display: 'flex', justifyContent: 'center' }}>
         <div style={{ maxWidth: '1296px', width: '100%', display: 'flex', flexDirection: 'column', gap: '115px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '10px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '10px', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0 }}>Explore</h2>
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>Services</h2>
             </div>
-            <a href="/service" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ Explore More ]</a>
+            <a href="/service" style={{ textDecoration: 'none', color: '#fff', fontSize: '16px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ Explore More ]</a>
           </div>
-          <ServiceCardWrapperFramerComponent.Responsive style={{ width: '100%' }} />
+          <ServicesAccordion />
         </div>
       </section>
       <section style={{ padding: '20px 0px 0px 0px', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '115px', alignItems: 'center' }}>
@@ -109,7 +107,7 @@ export default function Home() {
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0 }}>Super</h2>
               <h2 style={{ ...h2, fontSize: 'clamp(48px, 5vw, 114px)', letterSpacing: '-0.06em', margin: 0, fontStyle: 'italic' }}>Team</h2>
             </div>
-            <a href="/about" style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ ALL MEMBERS ]</a>
+            <a href="/about" style={{ textDecoration: 'none', color: '#fff', fontSize: '16px', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', cursor: 'pointer' }}>[ ALL MEMBERS ]</a>
           </div>
         </div>
         <div style={{ width: '100%', padding: '0px 30px', display: 'flex', justifyContent: 'center' }}>
@@ -125,9 +123,10 @@ export default function Home() {
       color: '#ffffff',
       letterSpacing: '-0.04em',
       lineHeight: 1.1,
-      margin: '0 0 64px 0'
+      margin: '0 0 64px 0',
+      textAlign: 'center'
     }}>
-      Things / Clients are saying that make us blush
+      Things our clients<br />are saying<br />that make us blush
     </h2>
     <TestimonialSlider />
     <div style={{ marginTop: '80px' }}>
@@ -144,8 +143,8 @@ export default function Home() {
       <section style={{ padding: 'clamp(60px, 12vw, 140px) clamp(16px, 3vw, 30px) clamp(100px, 15vw, 180px)', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '760px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', textAlign: 'center' }}>
           <h2 style={h2}>Ready to <em>Grow</em>?</h2>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '480px', lineHeight: '1.6' }}>Stop guessing. Start tracking what actually works.</p>
-          <Link to="/contact" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '14px', border: '1px solid rgba(255,255,255,0.3)', padding: '14px 28px' }}>[ Contact Us ]</Link>
+          <p style={{ fontSize: '22px', color: 'rgba(255,255,255,0.6)', maxWidth: '480px', lineHeight: '1.6' }}>Stop guessing. Start tracking what actually works.</p>
+          <Link to="/contact" className="ghost-cta" style={{ textDecoration: 'none', color: '#ff1f00', fontSize: '18px', border: '1px solid rgba(255,255,255,0.3)', padding: '16px 32px' }}>[ Contact Us ]</Link>
         </div>
       </section>
     </div>

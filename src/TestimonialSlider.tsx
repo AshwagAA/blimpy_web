@@ -115,7 +115,7 @@ export default function TestimonialSlider() {
             >
               ←
             </button>
-            <span style={{ color: '#fff', fontSize: '14px', minWidth: '40px', textAlign: 'center' }}>
+            <span style={{ color: '#fff', fontSize: '16px', minWidth: '40px', textAlign: 'center' }}>
               {currentIndex + 1} / {testimonials.length}
             </span>
             <button
@@ -158,8 +158,8 @@ export default function TestimonialSlider() {
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <Avatar name={current.author} size={50} />
           <div>
-            <p style={{ fontSize: '14px', fontWeight: 600, color: '#fff', margin: 0 }}>{current.author}</p>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0 0' }}>{current.role}</p>
+            <p style={{ fontSize: '16px', fontWeight: 600, color: '#fff', margin: 0 }}>{current.author}</p>
+            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0 0' }}>{current.role}</p>
           </div>
         </div>
       </div>

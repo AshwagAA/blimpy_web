@@ -160,7 +160,7 @@ export function Counter() {
           <span style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: '0.9', letterSpacing: '-0.04em', color: '#fff' }}>
             <CountUp target={target} suffix={suffix} />
           </span>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>{label}</span>
+          <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>{label}</span>
         </div>
       ))}
     </div>
@@ -201,7 +201,7 @@ export function Navbar() {
       <style>{`
         .nav-link:hover { color: #ff1f00 !important; }
         .nav-link-active { background: rgba(255,255,255,0.1); }
-        .nav-contact:hover { background: #ff1f00 !important; border-color: #ff1f00 !important; }
+        .nav-contact:hover { background: #ff1f00 !important; border-color: #ff1f00 !important; color: #fff !important; }
         .nav-contact.nav-link-active { background: rgba(255,255,255,0.1); }
         .mobile-menu { display: none; }
         .mobile-link { padding: 6px 14px; border-radius: 6px; }
@@ -257,7 +257,7 @@ export const solidCtaStyle: React.CSSProperties = {
   border: 'none',
   color: '#fff',
   padding: '16px 32px',
-  fontSize: '14px',
+  fontSize: '16px',
   cursor: 'pointer',
   letterSpacing: '0.08em',
   textTransform: 'uppercase',
@@ -265,22 +265,103 @@ export const solidCtaStyle: React.CSSProperties = {
   fontWeight: 600,
 }
 
+// ─── SERVICES ACCORDION (replaces the Framer smart component — its shared
+// gesture/variant state machine across all 4 cards was slow to animate and,
+// under fast clicks, could close one card and open the wrong one instead) ──
+const SERVICES = [
+  {
+    num: '001',
+    title: 'Data Integration',
+    subheading: 'How We Help',
+    description: "We CONNECT your scattered marketing platforms, socials, website, and CRM, into one reliable hub. We fix your tracking infrastructure so you always know exactly where your leads come from.",
+    image: 'https://framerusercontent.com/images/uQaRujCdcvawmrP5nJY0eAM4c.jpeg?width=341&height=265',
+    tools: ['Brand Strategy', 'Brand Identity Design'],
+  },
+  {
+    num: '002',
+    title: 'Data Analysis',
+    subheading: 'How We Work',
+    description: "We go beyond the numbers to tell you what they mean. We monitor your funnels and Cost Per Lead (CPL) to extract actionable insights that stop wasted ad spend and increase your ROI.",
+    image: 'https://framerusercontent.com/images/0eMZxBxgIDx0zeicAr7s66iQPSg.jpeg?width=4764&height=3264',
+    tools: ['Optimization', 'Funnel'],
+  },
+  {
+    num: '003',
+    title: 'Data Visualization',
+    subheading: 'What We Do',
+    description: "We turn messy, overwhelming numbers into clean, real-time dashboards. You get total visibility over your performance at a glance.",
+    image: 'https://framerusercontent.com/images/2P73aCIGjwK6TVyFtXdvZYomRAg.jpeg?width=2067&height=1816',
+    tools: ['Brand Strategy', 'Brand Identity Design'],
+  },
+  {
+    num: '004',
+    title: 'Creative Marketing',
+    subheading: 'How We Add Value',
+    description: "We replace guesswork with a data-driven system. We use your hard data to guide your brand strategy, website, socials, and email marketing to ensure every piece of creative actually converts.",
+    image: 'https://framerusercontent.com/images/jhk7pbQqXjP3pz7o1dSbjyG4eoY.png?width=1908&height=1038',
+    tools: ['Brand Strategy', 'Brand Identity Design'],
+  },
+]
+
+export function ServicesAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  return (
+    <div style={{ width: '100%' }}>
+      {SERVICES.map((s, i) => {
+        const isOpen = openIndex === i
+        return (
+          <div key={s.num} style={{ borderTop: i === 0 ? '1px solid rgba(255,255,255,0.1)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : i)}
+              style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', padding: '32px 0', display: 'flex', alignItems: 'center', gap: '24px', textAlign: 'left', color: '#fff', fontFamily: 'Funnel Display' }}
+            >
+              <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', flexShrink: 0, width: '40px' }}>{s.num}</span>
+              <span style={{ flex: 1, fontSize: 'clamp(28px, 4vw, 48px)', letterSpacing: '-0.02em', lineHeight: '1.1' }}>{s.title}</span>
+              <span style={{ fontSize: '28px', flexShrink: 0, color: isOpen ? '#ff1f00' : '#fff', lineHeight: 1 }}>{isOpen ? '−' : '+'}</span>
+            </button>
+            <div style={{ display: 'grid', gridTemplateRows: isOpen ? '1fr' : '0fr', transition: 'grid-template-rows 0.25s ease' }}>
+              <div style={{ overflow: 'hidden' }}>
+                <div style={{ display: 'flex', gap: 'clamp(20px, 4vw, 40px)', flexWrap: 'wrap', alignItems: 'flex-start', paddingBottom: '40px' }}>
+                  <img src={s.image} alt={s.title} style={{ width: '160px', height: '124px', objectFit: 'cover', flexShrink: 0 }} />
+                  <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <span style={{ fontSize: '18px', fontWeight: 600 }}>{s.subheading}</span>
+                    <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.6', margin: 0, maxWidth: '520px' }}>{s.description}</p>
+                  </div>
+                  <div style={{ flexShrink: 0, minWidth: '160px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <span style={{ fontSize: '16px' }}>Tool</span>
+                    {s.tools.map(t => (
+                      <span key={t} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 // ─── TEAM GRID (static, replaces the old auto-scrolling ticker) ─────────────
 const TEAM = [
-  { name: 'Ashwag Alsayed', img: 'https://framerusercontent.com/images/EOypU6a3NEsdREefJi2bUJPmxI.jpg?width=1024&height=1024' },
-  { name: 'Catherine Muya', img: 'https://framerusercontent.com/images/mhmcqKSQyK6CfUjDR2xBsWWKXkM.jpg?width=947&height=947' },
-  { name: 'Mustafa Akasha', img: 'https://framerusercontent.com/images/q69wQc9sVJQZl7aUzQb1s4xcfw.jpg?width=687&height=852' },
+  { name: 'Ashwag Alsayed', role: 'CEO', img: 'https://framerusercontent.com/images/EOypU6a3NEsdREefJi2bUJPmxI.jpg?width=1024&height=1024' },
+  { name: 'Catherine Muya', role: 'Data Analyst', img: 'https://framerusercontent.com/images/mhmcqKSQyK6CfUjDR2xBsWWKXkM.jpg?width=947&height=947' },
+  { name: 'Mustafa Akasha', role: 'CTO', img: 'https://framerusercontent.com/images/q69wQc9sVJQZl7aUzQb1s4xcfw.jpg?width=687&height=852' },
 ]
 
 export function TeamGrid() {
   return (
     <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
-      {TEAM.map(({ name, img }) => (
+      {TEAM.map(({ name, role, img }) => (
         <div key={name} style={{ flex: '1 1 280px', minWidth: '220px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ width: '100%', aspectRatio: '0.85', overflow: 'hidden' }}>
             <img src={img} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1)', display: 'block' }} />
           </div>
-          <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.02em' }}>[ {name} ]</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.02em' }}>[ {name} ]</span>
+            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.02em' }}>{role}</span>
+          </div>
         </div>
       ))}
     </div>

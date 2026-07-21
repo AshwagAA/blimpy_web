@@ -1,8 +1,14 @@
+/* No global font-family was ever set, so every plain <p>/<span>/<label>
+   across the hand-written pages (this site's own copy, not the Framer
+   exports, which set their own font per text preset) silently fell back
+   to the browser's default serif face. Match the sans-serif already
+   used for headings and buttons everywhere else. */
 html,
 body {
   overflow-x: hidden;
   max-width: 100vw;
   background: rgb(18, 18, 18);
+  font-family: 'Funnel Display', sans-serif;
 }
 
 #root {
@@ -112,4 +118,37 @@ a[href="/blog"] {
    alone in the row once this is hidden. */
 .footer-cta-hidden .framer-1704do7 {
   display: none !important;
+}
+
+/* Shared hover state for the bordered "[ Contact Us ]" / "[ Get in
+   touch ]" ghost buttons (Home, Work, Work detail, footer) — they had
+   no hover feedback at all before this. */
+.ghost-cta {
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.ghost-cta:hover {
+  background-color: #ff1f00 !important;
+  border-color: #ff1f00 !important;
+  color: #fff !important;
+}
+
+/* Two Framer-generated text presets still render in Playfair Display
+   (serif): the footer's "Talk" in "Let's Talk" (framer-styles-preset-
+   1r59ug4) and the pricing cards' "/ month" (framer-styles-preset-
+   15jo3wz). Both read the font off a --framer-font-family custom
+   property via unframer's base rule, so overriding font-family here
+   directly (not the variable) is what reliably wins the cascade. */
+.framer-styles-preset-1r59ug4,
+.framer-styles-preset-15jo3wz {
+  font-family: 'Funnel Display', sans-serif !important;
+}
+
+/* Partner logos (framer-ze6zxq: Kenya Flying Labs, framer-h1h0ah:
+   VunaChain) come in as full-color PNGs with mismatched palettes.
+   brightness(0) crushes every RGB channel to black without touching
+   alpha, then invert(1) flips that black to white — recolors the logo
+   marks solid white while keeping the source PNGs' transparency intact. */
+.framer-ze6zxq img,
+.framer-h1h0ah img {
+  filter: brightness(0) invert(1);
 }

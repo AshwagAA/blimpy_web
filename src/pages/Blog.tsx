@@ -24,7 +24,7 @@ export default function Blog() {
 
       <section style={{ padding: 'clamp(100px, 15vw, 160px) clamp(16px, 3vw, 30px) 80px', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '1296px' }}>
-          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Latest <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic' }}>Blogs</em></h1>
+          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Latest <em style={{ fontFamily: 'Funnel Display', fontStyle: 'italic' }}>Blogs</em></h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '80px' }}>Stay informed and inspired with insights, tips, and trends from the digital world.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '60px 32px' }}>
             {blogPosts.map(({ title, date, slug }) => (
@@ -33,11 +33,11 @@ export default function Blog() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <img src="https://framerusercontent.com/images/ml9fEMwAsiQ3of9IQqPaQRzBG0E.png" alt="Blimpy" style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }} />
         <div>
-          <p style={{ margin: 0, fontSize: '14px', color: '#fff' }}>Blimpy</p>
-          <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>Storyteller</p>
+          <p style={{ margin: 0, fontSize: '16px', color: '#fff' }}>Blimpy</p>
+          <p style={{ margin: 0, fontSize: '16px', color: 'rgba(255,255,255,0.5)' }}>Storyteller</p>
         </div>
       </div>
-      <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>{date}</span>
+      <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)' }}>{date}</span>
     </div>
     <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden', background: 'rgba(255,255,255,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src="https://framerusercontent.com/images/ml9fEMwAsiQ3of9IQqPaQRzBG0E.png" alt="" style={{ width: '60px', height: '60px', objectFit: 'contain', opacity: 0.25 }} />
@@ -60,8 +60,8 @@ export function BlogDetail() {
     <div style={bg}>
       <section style={{ padding: 'clamp(100px, 15vw, 160px) clamp(16px, 3vw, 30px) 80px', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '760px' }}>
-          <Link to="/blog" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', textDecoration: 'none' }}>← Back to Blog</Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '32px 0 16px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
+          <Link to="/blog" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '16px', textDecoration: 'none' }}>← Back to Blog</Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '32px 0 16px', fontSize: '16px', color: 'rgba(255,255,255,0.55)' }}>
             <span>{post.author}</span>
             <span>•</span>
             <span>{post.date}</span>

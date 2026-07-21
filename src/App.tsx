@@ -1,10 +1,24 @@
 import '@fontsource/gasoek-one'
 import './framer/styles.css'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import FooterFramerComponent from './framer/footer.jsx'
 import { Navbar, bg } from './lib/shared'
 import NotFound from './pages/NotFound'
+
+// React Router's client-side navigation doesn't reset scroll position like a
+// full page load does, so following a link near the bottom of a long page
+// (e.g. a "Contact Us" CTA) lands on the next page still scrolled way down —
+// clamped to the bottom if that page is shorter. Force scroll-to-top on
+// every route change so every in-app link behaves the way a normal page
+// navigation would.
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
@@ -31,6 +45,7 @@ function AppShell() {
   const showFooterCta = pathname === '/service'
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Suspense fallback={<RouteFallback />}>
         <Routes>

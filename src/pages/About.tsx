@@ -6,7 +6,7 @@ export default function About() {
     <div style={bg}>
       <section style={{ padding: 'clamp(100px, 15vw, 160px) clamp(16px, 3vw, 30px) 80px', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '1296px' }}>
-          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Our <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic' }}>Story</em></h1>
+          <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em', marginBottom: '20px' }}>Our <em style={{ fontFamily: 'Funnel Display', fontStyle: 'italic' }}>Story</em></h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '80px' }}>Have a project in mind or just want to chat? Reach out — we're here to bring your digital vision to life with smart strategy and bold design.</p>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
             <img src="https://framerusercontent.com/images/4ivwcYUKgFi3Z8QSIx2ZL4aKLQ.png" alt="Blimpy team member reviewing a live data dashboard on a phone" style={{ flex: '1 1 300px', maxWidth: '44%', aspectRatio: '0.826', objectFit: 'cover', minWidth: '200px' }} />

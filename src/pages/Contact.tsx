@@ -10,7 +10,7 @@ function encodeForm(data: FormData) {
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const inputStyle: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.2)', padding: '16px 0', color: '#fff', fontSize: '16px', outline: 'none', width: '100%', fontFamily: 'Funnel Display, sans-serif', letterSpacing: '-0.01em' }
-  const labelStyle: React.CSSProperties = { fontSize: '12px', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em' }
+  const labelStyle: React.CSSProperties = { fontSize: '16px', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em' }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -36,7 +36,7 @@ export default function Contact() {
         <div style={{ width: '100%', maxWidth: '1296px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
             <h1 style={{ fontFamily: 'Funnel Display', fontSize: 'clamp(48px, 10vw, 134px)', lineHeight: '0.9', letterSpacing: '-0.04em' }}>
-              Let's <em style={{ fontFamily: 'Playfair Display', fontStyle: 'italic', color: '#ff1f00' }}>Talk</em>
+              Let's <em style={{ fontFamily: 'Funnel Display', fontStyle: 'italic', color: '#ff1f00' }}>Talk</em>
             </h1>
             <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.5)', maxWidth: '340px', lineHeight: '1.6', textAlign: 'right' }}>Have a project in mind? Reach out and let's build something great together.</p>
           </div>
@@ -60,7 +60,7 @@ export default function Contact() {
               <div style={{ flex: 1, minWidth: '280px', display: 'flex', flexDirection: 'column', gap: '16px', borderLeft: '2px solid #ff1f00', paddingLeft: '24px' }}>
                 <h2 style={{ fontFamily: 'Funnel Display', fontSize: '28px', margin: 0 }}>Message sent ↗</h2>
                 <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', margin: 0, maxWidth: '380px' }}>Thanks for reaching out — we'll get back to you within 24 hours.</p>
-                <button type="button" onClick={() => setStatus('idle')} style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', padding: '12px 24px', fontSize: '13px', cursor: 'pointer', alignSelf: 'flex-start', marginTop: '8px' }}>Send another message</button>
+                <button type="button" onClick={() => setStatus('idle')} style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', padding: '12px 24px', fontSize: '16px', cursor: 'pointer', alignSelf: 'flex-start', marginTop: '8px' }}>Send another message</button>
               </div>
             ) : (
               <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} style={{ flex: 1, minWidth: '280px', display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -91,11 +91,11 @@ export default function Contact() {
                   <textarea name="message" required rows={5} placeholder="Tell us about your project..." style={{ ...inputStyle, resize: 'none' }} />
                 </div>
                 {status === 'error' && (
-                  <p style={{ color: '#ff6b5c', fontSize: '14px', margin: 0 }}>Something went wrong sending your message. Please try again, or email us directly.</p>
+                  <p style={{ color: '#ff6b5c', fontSize: '16px', margin: 0 }}>Something went wrong sending your message. Please try again, or email us directly.</p>
                 )}
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-                  <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>We'll get back to you within 24 hours.</span>
-                  <button type="submit" disabled={status === 'sending'} style={{ background: '#ff1f00', border: 'none', color: '#fff', padding: '18px 48px', fontSize: '14px', cursor: status === 'sending' ? 'default' : 'pointer', opacity: status === 'sending' ? 0.6 : 1, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'Funnel Display, sans-serif', fontWeight: 600 }}>{status === 'sending' ? 'SENDING…' : 'SEND MESSAGE ↗'}</button>
+                  <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)' }}>We'll get back to you within 24 hours.</span>
+                  <button type="submit" disabled={status === 'sending'} style={{ background: '#ff1f00', border: 'none', color: '#fff', padding: '18px 48px', fontSize: '16px', cursor: status === 'sending' ? 'default' : 'pointer', opacity: status === 'sending' ? 0.6 : 1, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'Funnel Display, sans-serif', fontWeight: 600 }}>{status === 'sending' ? 'SENDING…' : 'SEND MESSAGE ↗'}</button>
                 </div>
               </form>
             )}
